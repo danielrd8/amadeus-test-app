@@ -2,6 +2,23 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
+- View Products
+
+![image](https://github.com/danielrd8/amadeus-test-app/assets/53479385/b60d8eb3-2ae5-48fd-b46c-5f33209d52e5)
+
+- Update Product
+
+![image](https://github.com/danielrd8/amadeus-test-app/assets/53479385/e46a42dd-cfcd-4748-9322-86c559ed0bb4)
+
+- Create Product
+
+![image](https://github.com/danielrd8/amadeus-test-app/assets/53479385/09d13a30-3777-4bb3-9142-526d7da8e4ae)
+
+- Deleted Product
+
+![image](https://github.com/danielrd8/amadeus-test-app/assets/53479385/a36856d6-1bb6-4d74-9552-66596adbabc0)
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
