@@ -1,0 +1,56 @@
+<div mat-dialog-title>
+    <h1>{{data ? 'Update': 'Create'}} Product</h1>
+</div>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+    <div mat-dialog-content class="content">
+        <div class="row">            
+            <mat-form-field appearance="outline">
+                <mat-label>Name:</mat-label>
+                <input matInput type="text" placeholder="i.e. Keyboard" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Brand:</mat-label>
+                <mat-select formControlName="brand">
+                    <mat-option *ngFor="let val of brands" [value]="val">{{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Description:</mat-label>
+                <textarea matInput placeholder="Brief product description" formControlName="description"></textarea>
+            </mat-form-field>            
+        </div>
+        <div class="row">   
+            <mat-form-field appearance="outline">
+                <mat-label>Manufacturing Date:</mat-label>
+                <input matInput [matDatepicker]="picker" [max]="today" formControlName="manufacturingDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Quantity:</mat-label>
+                <input matInput min=1 placeholder="i.e. 15" type="number" formControlName="quantity">
+            </mat-form-field>
+        </div>
+        
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Price:</mat-label>
+                <input matInput min=1 placeholder="i.e. 139.50" type="number" formControlName="price">
+            </mat-form-field>
+            <mat-form-field appearance="outline">   
+                <mat-checkbox name="discount" [indeterminate]="indetDiscount" formControlName="discount">                    
+                    <input matInput placeholder="Discount 15%">
+                </mat-checkbox>   
+            </mat-form-field>
+        </div>
+        
+    </div>
+    <div mat-dialog-actions class="action-btns">
+        <button style="margin: 10px;" mat-raised-button color="accent" type="submit">{{data ? 'Update': 'Create'}}</button>
+        <button mat-raised-button type="button" color="warn" [mat-dialog-close]="false">Cancel</button>
+    </div>
+</form>
